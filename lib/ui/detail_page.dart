@@ -1,4 +1,4 @@
-import 'package:news_app/article.dart';
+import 'package:news_app/data/model/article.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/widgets/custom_scaffold.dart';
 import 'package:webview_flutter/webview_flutter.dart';

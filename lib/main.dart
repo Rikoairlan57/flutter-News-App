@@ -1,8 +1,8 @@
-import 'package:news_app/article.dart';
-import 'package:news_app/detail_page.dart';
-import 'package:news_app/list_page.dart';
-import 'package:news_app/styles.dart';
+import 'package:news_app/data/model/article.dart';
+import 'package:news_app/ui/list_page.dart';
+import 'package:news_app/common/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:news_app/ui/detail_page.dart';
 
 void main() {
   runApp(const MyApp());
