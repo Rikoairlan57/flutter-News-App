@@ -1,5 +1,5 @@
-import 'package:news_app/article.dart';
-import 'package:news_app/detail_page.dart';
+import 'package:news_app/data/model/article.dart';
+import 'package:news_app/ui/detail_page.dart';
 import 'package:flutter/material.dart';
 
 class NewsListPage extends StatelessWidget {
@@ -28,6 +28,21 @@ class NewsListPage extends StatelessWidget {
           );
         },
       ),
+    );
+  }
+
+  Widget _buildList(BuildContext context) {
+    return FutureBuilder<String>(
+      future: DefaultAssetBundle.of(context).loadString('assets/articles.json'),
+      builder: (context, snapshot) {
+        final List<Article> articles = parseArticles(snapshot.data);
+        return ListView.builder(
+          itemCount: articles.length,
+          itemBuilder: (context, index) {
+            return _buildArticleItem(context, articles[index]);
+          },
+        );
+      },
     );
   }
 
