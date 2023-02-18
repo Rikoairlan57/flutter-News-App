@@ -1,3 +1,4 @@
+import 'package:news_app/common/navigation.dart';
 import 'package:news_app/common/styles.dart';
 import 'package:news_app/data/model/article.dart';
 
@@ -29,10 +30,9 @@ class CardArticle extends StatelessWidget {
           article.title,
         ),
         subtitle: Text(article.author ?? ""),
-        onTap: () => Navigator.pushNamed(
-          context,
+        onTap: () => Navigation.intentWithData(
           ArticleDetailPage.routeName,
-          arguments: article,
+          article,
         ),
       ),
     );
