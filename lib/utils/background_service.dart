@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:ui';
 import 'dart:isolate';
 import 'package:news_app/main.dart';
@@ -8,7 +9,7 @@ final ReceivePort port = ReceivePort();
 
 class BackgroundService {
   static BackgroundService? _instance;
-  static const String _isolateName = "isolate";
+  static const String _isolateName = 'isolate';
   static SendPort? _uiSendPort;
 
   BackgroundService._internal() {
@@ -25,7 +26,7 @@ class BackgroundService {
   }
 
   static Future<void> callback() async {
-    print('Alarm fired!');
+    log('Alarm fired!');
     final NotificationHelper notificationHelper = NotificationHelper();
     var result = await ApiService().topHeadlines();
     await notificationHelper.showNotification(

@@ -1,8 +1,5 @@
-import 'package:news_app/common/styles.dart';
-import 'package:news_app/data/api/api_service.dart';
-import 'package:news_app/data/model/article.dart';
 import 'package:news_app/provider/news_provider.dart';
-import 'package:news_app/ui/article_detail_page.dart';
+import 'package:news_app/utils/result_state.dart';
 import 'package:news_app/widgets/card_article.dart';
 import 'package:news_app/widgets/platform_widget.dart';
 import 'package:flutter/cupertino.dart';
@@ -41,7 +38,7 @@ class ArticleListPage extends StatelessWidget {
         } else {
           return const Center(
             child: Material(
-              child: Text(''),
+              child: Text(""),
             ),
           );
         }

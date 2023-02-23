@@ -51,7 +51,7 @@ class Article {
   factory Article.fromJson(Map<String, dynamic> json) => Article(
         author: json["author"],
         title: json["title"],
-        description: json["description"],
+        description: json["description"] ?? "-",
         url: json["url"],
         urlToImage: json["urlToImage"],
         publishedAt: DateTime.parse(json["publishedAt"]),
