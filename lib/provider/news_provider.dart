@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
+
 import 'package:news_app/data/api/api_service.dart';
 import 'package:news_app/data/model/article.dart';
-
-enum ResultState { loading, noData, hasData, error }
+import 'package:news_app/utils/result_state.dart';
+import 'package:flutter/material.dart';
 
 class NewsProvider extends ChangeNotifier {
   final ApiService apiService;
@@ -29,7 +30,7 @@ class NewsProvider extends ChangeNotifier {
       if (article.articles.isEmpty) {
         _state = ResultState.noData;
         notifyListeners();
-        return _message = "Empty Data";
+        return _message = 'Empty Data';
       } else {
         _state = ResultState.hasData;
         notifyListeners();
@@ -38,7 +39,7 @@ class NewsProvider extends ChangeNotifier {
     } catch (e) {
       _state = ResultState.error;
       notifyListeners();
-      return _message = "Error ==> $e";
+      return _message = 'Error --> $e';
     }
   }
 }
